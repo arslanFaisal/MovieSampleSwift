@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item List-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController title="Item List" id="vXZ-lx-hvc" customClass="MSListViewController" customModule="MovieSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Twe-Wp-Au1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SampleListCellIdentifier" rowHeight="120" id="J5t-jJ-GMl" customClass="MSListCell" customModule="MovieSampleSwift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J5t-jJ-GMl" id="MKb-bE-oLZ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ohl-bo-9kK">
+                                                    <rect key="frame" x="130" y="20" width="180" height="80"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="UvO-bj-4HL">
+                                                    <rect key="frame" x="10" y="5" width="110" height="110"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="110" id="urG-QG-shy"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UvO-bj-4HL" firstAttribute="top" secondItem="MKb-bE-oLZ" secondAttribute="topMargin" constant="-3" id="2fV-ib-Emv"/>
+                                                <constraint firstItem="ohl-bo-9kK" firstAttribute="top" secondItem="MKb-bE-oLZ" secondAttribute="topMargin" constant="12" id="E4d-8c-Ojr"/>
+                                                <constraint firstItem="ohl-bo-9kK" firstAttribute="centerY" secondItem="UvO-bj-4HL" secondAttribute="centerY" id="JVC-xz-2LF"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="UvO-bj-4HL" secondAttribute="bottom" constant="-4" id="PWx-SY-G3u"/>
+                                                <constraint firstItem="ohl-bo-9kK" firstAttribute="leading" secondItem="UvO-bj-4HL" secondAttribute="trailing" constant="10" id="QTm-dn-D02"/>
+                                                <constraint firstItem="UvO-bj-4HL" firstAttribute="leading" secondItem="MKb-bE-oLZ" secondAttribute="leadingMargin" constant="2" id="ifD-2S-v8C"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ohl-bo-9kK" secondAttribute="trailing" constant="2" id="zLR-0b-0th"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="headlineLbl" destination="ohl-bo-9kK" id="E7l-9G-Qd1"/>
+                                            <outlet property="imgView" destination="UvO-bj-4HL" id="kjS-A0-LmQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="WWP-VZ-aet"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="VTb-Vs-kfp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Twe-Wp-Au1" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="3lM-tp-u2E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Twe-Wp-Au1" secondAttribute="trailing" constant="-16" id="K9X-WS-5aC"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Twe-Wp-Au1" secondAttribute="bottom" id="VZn-TZ-IND"/>
+                            <constraint firstItem="Twe-Wp-Au1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="taO-pw-jHO"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="listTblView" destination="Twe-Wp-Au1" id="Xpy-Qb-III"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="placeholder.png" width="215" height="319"/>
+    </resources>
+</document>
